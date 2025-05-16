@@ -22,7 +22,7 @@ export const Service: React.FC<TProps> = ({
   return (
     <li
       className={cn(
-        `flex flex-col flex-1 gap-4 md:gap-8 items-center`,
+        `flex flex-col gap-4 md:gap-8 items-center`,
         styles.service
       )}
     >

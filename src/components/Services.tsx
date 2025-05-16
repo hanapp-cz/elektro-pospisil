@@ -36,7 +36,7 @@ const services = [
 export const Services: React.FC<TProps> = () => {
   return (
     <Section sectionKey="services" className="bg-white text-center">
-      <ul className="flex flex-col md:flex-row w-full justify-around gap-x-4 gap-y-16 pt-8">
+      <ul className="flex flex-col md:flex-row w-full justify-around max-w-[1000px] mx-auto gap-x-4 gap-y-16 pt-8">
         {services.map((service) => (
           <Service key={service.label} {...service} />
         ))}
