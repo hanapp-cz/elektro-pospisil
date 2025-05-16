@@ -13,6 +13,7 @@ import {
 import { cn } from '@/utils/cn';
 
 import { getButtonStyles } from './Button';
+import styles from './Navigation.module.css';
 import { PhoneLink } from './PhoneLink';
 
 type TProps = NoChildren;
@@ -35,14 +36,14 @@ export const Navigation: React.FC<TProps> = () => {
         <Menu />
       </button>
 
-      <h1 className="w-max sm:text-lg md:text-2xl font-semibold relative">
+      <h1 className="w-max sm:text-lg md:text-2xl font-medium md:font-semibold relative">
         <Link href={`/`}>{NAME}</Link>
       </h1>
 
-      <nav className="hidden md:block relative">
+      <nav className="hidden md:flex inset-0 absolute justify-center items-center">
         <ul className="flex gap-8">
           {Object.values(SECTIONS).map((section) => (
-            <li key={section.id}>
+            <li className={styles.link} key={section.id}>
               <Link href={`#${section.id}`}>{section.name}</Link>
             </li>
           ))}

@@ -1,0 +1,20 @@
+.link {
+  position: relative;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid currentColor;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
