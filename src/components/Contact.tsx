@@ -16,7 +16,7 @@ type TProps = NoChildren;
 
 export const Contact: React.FC<TProps> = () => {
   return (
-    <Section sectionKey="contact" className="bg-white bg-pattern">
+    <Section sectionKey="contact" className="pattern bg-white">
       <div className="flex items-center gap-4">
         <address
           className={cn(

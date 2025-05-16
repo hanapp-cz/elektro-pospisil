@@ -1,0 +1,12 @@
+.hero {
+  --pattern-contrast: 10%;
+  --color-gradient: linear-gradient(white, var(--color-primary-light));
+}
+
+.polygon1 {
+  clip-path: polygon(0% 90%, 40% 80%, 70% 100%, 0% 100%);
+}
+
+.polygon2 {
+  clip-path: polygon(40% 80%, 100% 64%, 100% 100%, 70% 100%);
+}
