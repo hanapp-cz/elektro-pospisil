@@ -23,13 +23,12 @@ export const Hero: React.FC<TProps> = () => {
     >
       <div
         className={cn(
-          "flex-1",
           "flex flex-col items-center md:items-start",
           "text-center md:text-left",
           "md:ml-6 md:-translate-y-16"
         )}
       >
-        <h2 className="text-4xl md:text-[6.5vw]/[1.2] lg:text-7xl font-bold mb-4 w-fit max-w-[20ch]">
+        <h2 className="text-4xl md:text-[6.5vw]/[1.2] lg:text-7xl font-bold mb-4 max-w-[12ch]">
           Alarmy, revize, elektroinstalace
         </h2>
         <p className="mb-6 ml-1 text-lg">
@@ -50,7 +49,7 @@ export const Hero: React.FC<TProps> = () => {
           "[clip-path:polygon(40%_80%,100%_64%,100%_100%,70%_100%)]"
         )}
       />
-      <div className={`relative flex-1 flex justify-center`}>
+      <div className={`relative flex flex-1 justify-center`}>
         <Image
           src={electrician}
           alt="" // decorative
