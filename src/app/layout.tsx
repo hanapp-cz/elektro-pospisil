@@ -1,10 +1,10 @@
-import './globals.css';
+import "./globals.css";
 
-import type { Metadata } from 'next';
-import { Work_Sans } from 'next/font/google';
+import type { Metadata } from "next";
+import { Work_Sans } from "next/font/google";
 
 const workSans = Work_Sans({
-  variable: "--font-geist-sans",
+  variable: "--font-work-sans",
   subsets: ["latin"],
 });
 

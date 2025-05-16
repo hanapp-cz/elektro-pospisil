@@ -1,0 +1,51 @@
+/* ❤️ https://www.joshwcomeau.com/css/backdrop-filter/ ❤️ */
+
+.header {
+  --thickness: 4px;
+  --blur-value: 12px;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  /*
+      Very opaque, for unsupported browsers.
+      Overwritten in the feature queries below.
+    */
+  background: hsl(0deg 0% 100% / 0.95);
+}
+
+/*
+    This code gets applied for folks using
+    browsers that support backdrop-filter.
+  */
+@supports (backdrop-filter: blur(var(--blur-value))) or
+  (-webkit-backdrop-filter: blur(var(--blur-value))) {
+  .header {
+    background: color-mix(in hsl, var(--color-primary-light) 5%, transparent);
+  }
+
+  .backdrop {
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(var(--blur-value));
+    background: linear-gradient(to bottom, hsl(0deg 0% 95%), transparent 50%);
+  }
+}
+
+/*
+    This code gets applied for folks using
+    browsers that support mask-image. 
+  */
+@supports (mask-image: none) or (-webkit-mask-image: none) {
+  .backdrop {
+    height: 200%;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0% 50%,
+      transparent 50% 100%
+    );
+    mask-image: linear-gradient(to bottom, black 0% 50%, transparent 50% 100%);
+  }
+}
