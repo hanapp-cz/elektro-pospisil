@@ -2,10 +2,11 @@ import * as React from 'react';
 
 import Image from 'next/image';
 
+import { SECTIONS } from '@/config/config';
 import { cn } from '@/utils/cn';
 
 import electrician from '../../public/images/electrician.png';
-import { Button } from './Button';
+import { ButtonLink } from './ButtonLink';
 import styles from './Hero.module.css';
 
 type TProps = NoChildren;
@@ -34,7 +35,7 @@ export const Hero: React.FC<TProps> = () => {
           <p className="mb-6 ml-1 text-lg">
             Zkušení elektrikáři v Brně, Vyškově a okolí.
           </p>
-          <Button>Naše služby</Button>
+          <ButtonLink href={`#${SECTIONS.services.id}`}>Naše služby</ButtonLink>
         </div>
 
         <div
