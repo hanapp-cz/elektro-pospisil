@@ -33,7 +33,7 @@ export const Navigation: React.FC<TProps> = () => {
         <Menu />
       </button>
 
-      <h1 className="w-max sm:text-lg md:text-2xl font-medium md:font-semibold relative">
+      <h1 className="w-max sm:text-lg md:text-2xl font-medium md:font-semibold relative z-1">
         <Link href={`/`}>{NAME}</Link>
       </h1>
 
