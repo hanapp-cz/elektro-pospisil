@@ -12,6 +12,23 @@
   }
 } */
 
+@theme {
+  --animate-slide-in: slide-in 0.3s ease-in-out;
+  --animate-slide-in-delay: var(--animate-slide-in) 0.2s forwards;
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(-50%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -57,4 +74,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-work-sans), Arial, Helvetica, sans-serif;
+}
+
+/* prevent scrolling of the body, when the modal is open */
+body:has(.no-doc-scroll) {
+  overflow-y: hidden;
+  position: fixed;
 }

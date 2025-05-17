@@ -1,0 +1,21 @@
+.dialog[data-state="closed"] {
+  animation: slide-out 250ms ease-in;
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
+
+  a {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-25%);
+  }
+}
