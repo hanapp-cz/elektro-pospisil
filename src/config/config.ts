@@ -1,5 +1,5 @@
 export const PHONE = "723 583 684";
-export const EMAIL = "jiri.pospisil@elektro-pospisil.cz";
+export const EMAIL = "info@elektro-pospisil.cz";
 export const ADDRESS = "Luleč 62, 683 03 Luleč";
 export const NAME = "Jiří Pospíšil";
 export const WEB = "www.elektro-pospisil.cz";

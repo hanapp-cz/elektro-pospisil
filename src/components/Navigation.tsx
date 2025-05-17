@@ -6,14 +6,11 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-import {
-  NAME,
-  SECTIONS,
-} from '@/config/config';
+import { NAME } from '@/config/config';
 import { cn } from '@/utils/cn';
 
 import { getButtonStyles } from './Button';
-import styles from './Navigation.module.css';
+import { NavLinks } from './NavLinks';
 import { PhoneLink } from './PhoneLink';
 
 type TProps = NoChildren;
@@ -41,15 +38,8 @@ export const Navigation: React.FC<TProps> = () => {
       </h1>
 
       <nav className="hidden md:flex inset-0 absolute justify-center items-center">
-        <ul className="flex gap-8">
-          {Object.values(SECTIONS).map((section) => (
-            <li className={styles.link} key={section.id}>
-              <Link href={`#${section.id}`}>{section.name}</Link>
-            </li>
-          ))}
-        </ul>
+        <NavLinks />
       </nav>
-
       <PhoneLink
         className={getButtonStyles(
           cn(
