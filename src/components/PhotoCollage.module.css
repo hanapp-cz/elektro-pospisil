@@ -1,0 +1,64 @@
+.photoWrapper {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  overflow: hidden;
+
+  box-shadow: 0 6px 20px hsl(0 0% 0% / 0.25);
+  filter: brightness(0.98) saturate(0.8);
+  border: 5px solid hsl(0 0% 75%);
+}
+
+/* Specific positions & rotations */
+.photo1 {
+  top: 10px;
+  left: 5px;
+  transform: rotate(-4deg);
+  z-index: 3;
+}
+
+.photo2 {
+  top: 0px;
+  right: 20px;
+  transform: rotate(3deg);
+  z-index: 1;
+}
+
+.photo3 {
+  top: 100px;
+  left: 2px;
+  transform: rotate(-7deg);
+  z-index: 4;
+}
+
+.photo4 {
+  top: 70px;
+  right: 5px;
+  transform: rotate(6deg);
+}
+
+.photo5 {
+  bottom: 10px;
+  left: 30px;
+  transform: rotate(5deg);
+  z-index: 5;
+}
+
+.photo6 {
+  bottom: 20px;
+  right: 10px;
+  transform: rotate(4deg);
+}
+
+.photo7 {
+  top: 150px;
+  left: 90px;
+  transform: rotate(-3deg);
+}
+
+.photo8 {
+  top: 25px;
+  right: 100px;
+  transform: rotate(2deg);
+  z-index: 2;
+}

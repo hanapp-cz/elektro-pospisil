@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { cn } from '@/utils/cn';
 
+import { PhotoCollage } from './PhotoColage';
 import { Section } from './Section';
 
 type TProps = NoChildren;
@@ -21,14 +22,7 @@ export const About: React.FC<TProps> = () => {
           "leading-loose text-pretty"
         )}
       >
-        <div
-          className={cn(
-            "bg-fuchsia-300 max-w-full size-80 rounded-md",
-            "md:float-left md:mr-8"
-          )}
-        >
-          TODO
-        </div>
+        <PhotoCollage />
 
         <p>
           Jsme dva elektrikáři, oba s více než dvacetiletou praxí. Zabýváme se
