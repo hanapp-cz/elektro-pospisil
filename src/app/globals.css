@@ -25,6 +25,28 @@
   --color-secondary: hsl(var(--hue-main) 18%);
 }
 
+@layer utilities {
+  .pattern {
+    --color-pattern: color-mix(
+      in oklab,
+      var(--color-slate-950) var(--pattern-contrast, 5%),
+      transparent
+    );
+
+    --grid-pattern: linear-gradient(var(--color-pattern) 1px, transparent 1px),
+      linear-gradient(to right, var(--color-pattern) 1px, transparent 1px),
+      var(--color-gradient, linear-gradient(transparent, transparent));
+
+    background-image: var(--grid-pattern);
+    background-size: 50px 50px, 50px 50px, cover;
+    background-attachment: fixed;
+  }
+
+  .content {
+    @apply container mx-auto px-6 lg:px-12 xl:max-w-[1300px];
+  }
+}
+
 html,
 body {
   min-height: 100%;
@@ -35,20 +57,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-work-sans), Arial, Helvetica, sans-serif;
-}
-
-.pattern {
-  --color-pattern: color-mix(
-    in oklab,
-    var(--color-slate-950) var(--pattern-contrast, 5%),
-    transparent
-  );
-
-  --grid-pattern: linear-gradient(var(--color-pattern) 1px, transparent 1px),
-    linear-gradient(to right, var(--color-pattern) 1px, transparent 1px),
-    var(--color-gradient, linear-gradient(transparent, transparent));
-
-  background-image: var(--grid-pattern);
-  background-size: 50px 50px, 50px 50px, cover;
-  background-attachment: fixed;
 }

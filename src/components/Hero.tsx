@@ -17,7 +17,7 @@ export const Hero: React.FC<TProps> = () => {
         className={cn(
           "xl:container xl:mx-auto",
           "flex flex-col gap-y-12 md:flex-row items-center",
-          "px-6 md:pl-16 xl:pl-32",
+          "md:pl-16 xl:pl-32",
           "py-16 md:py-20"
         )}
       >

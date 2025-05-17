@@ -20,8 +20,8 @@ export const Section: React.FC<TProps> = ({
   const section = SECTIONS[sectionKey];
 
   return (
-    <section id={section.id} className={cn("py-16 px-4 md:px-8", className)}>
-      <div className="container mx-auto">
+    <section id={section.id} className={cn("py-16 xl:py-28", className)}>
+      <div className="content">
         <h3
           className={cn(
             "uppercase tracking-wide font-semibold mb-8 text-center",
