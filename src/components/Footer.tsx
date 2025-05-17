@@ -30,10 +30,7 @@ export const Footer: React.FC<TProps> = () => {
         </div>
 
         <nav
-          className={cn(
-            "pt-4 sm:p-0",
-            "border-t border-primary-light/30 sm:border-0"
-          )}
+          className={cn("pt-4 sm:p-0", "border-t border-current sm:border-0")}
         >
           <NavLinks />
         </nav>
