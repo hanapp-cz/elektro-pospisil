@@ -1,23 +1,22 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import {
-  ADDRESS,
-  EMAIL,
-  NAME,
-} from '@/config/config';
-import { cn } from '@/utils/cn';
+import { ADDRESS, EMAIL, NAME } from "@/config/config";
+import { cn } from "@/utils/cn";
 
-import { PhoneLink } from './PhoneLink';
-import { Section } from './Section';
+import { ContactForm } from "./ContactForm";
+import { PhoneLink } from "./PhoneLink";
+import { Section } from "./Section";
 
 type TProps = NoChildren;
 
 export const Contact: React.FC<TProps> = () => {
   return (
-    <Section sectionKey="contact" className="pattern bg-white">
-      <div className="flex items-center gap-4">
+    <Section
+      sectionKey="contact"
+      className="pattern bg-white"
+      leftColumn={
         <address
           className={cn(
             "flex flex-col gap-2", //
@@ -27,12 +26,23 @@ export const Contact: React.FC<TProps> = () => {
           <p>{NAME}</p>
           <p>{ADDRESS}</p>
           <p>
-            E-mail: <Link href={`mailto:${EMAIL}`}>{EMAIL}</Link>
+            <Link href={`mailto:${EMAIL}`}>{EMAIL}</Link>
           </p>
           <p>
-            Telefon: <PhoneLink withPrefix />
+            <PhoneLink withPrefix />
           </p>
         </address>
+      }
+    >
+      <div
+        className={cn(
+          "py-6 px-8",
+          "md:justify-self-end",
+          "w-full max-w-[550px]",
+          "rounded-lg border-primary-light border bg-white/80 shadow-xl"
+        )}
+      >
+        <ContactForm />
       </div>
     </Section>
   );
