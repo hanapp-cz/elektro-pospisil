@@ -35,7 +35,7 @@ export const Section: React.FC<TProps> = ({
           className={cn(
             "uppercase tracking-wide font-semibold mb-8 text-center",
             titleColor,
-            isHalved && "col-start-1 row-start-1 md:text-left "
+            isHalved && "col-start-1 row-start-1 md:text-left xl:ml-32"
           )}
         >
           {section.name}
@@ -43,13 +43,13 @@ export const Section: React.FC<TProps> = ({
         <p
           className={cn(
             "text-2xl font-semibold mb-12 max-w-[22ch] mx-auto text-center",
-            isHalved && "col-start-1 row-start-2 md:text-left md:mx-0"
+            isHalved && "col-start-1 row-start-2 md:text-left md:mx-0 xl:ml-32"
           )}
         >
           {section.subtitle}
         </p>
         {isHalved && (
-          <div className="col-start-1 row-start-3 mb-8 ml-2 md:m-0">
+          <div className="col-start-1 row-start-3 mb-8 ml-2 md:m-0 xl:ml-32">
             {leftColumn}
           </div>
         )}
