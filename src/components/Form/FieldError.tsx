@@ -6,7 +6,7 @@ type TProps = RequiredChildren & Pick<PropsOf<typeof Form.Message>, "match">;
 
 export const FieldError: React.FC<TProps> = ({ children, match }) => {
   return (
-    <Form.Message match={match} className="text-red-600 block mt-1">
+    <Form.Message match={match} className="text-red-600 block mt-1 ml-1">
       {children}
     </Form.Message>
   );

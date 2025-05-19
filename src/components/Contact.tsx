@@ -36,10 +36,10 @@ export const Contact: React.FC<TProps> = () => {
     >
       <div
         className={cn(
-          "py-6 px-8",
+          "py-6 px-6 sm:px-8",
           "md:justify-self-end",
-          "w-full max-w-[550px]",
-          "rounded-lg border-primary-light border bg-white/80 shadow-xl"
+          "w-full sm:max-w-[550px]",
+          "sm:rounded-lg border-primary-light border-y sm:border bg-white/80 shadow-xl"
         )}
       >
         <ContactForm />

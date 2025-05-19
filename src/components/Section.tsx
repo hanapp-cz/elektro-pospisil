@@ -54,7 +54,9 @@ export const Section: React.FC<TProps> = ({
           </div>
         )}
 
-        <div className={cn(isHalved && "row-span-3")}>{children}</div>
+        <div className={cn(isHalved && "row-span-3 -mx-6 sm:mx-0")}>
+          {children}
+        </div>
       </div>
     </section>
   );
