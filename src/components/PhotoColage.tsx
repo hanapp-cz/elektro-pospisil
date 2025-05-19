@@ -1,16 +1,16 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { cn } from '@/utils/cn';
+import { cn } from "@/utils/cn";
 
-import photo1 from '../../public/images/photo1.jpg';
-import photo2 from '../../public/images/photo2.jpg';
-import photo3 from '../../public/images/photo3.jpg';
-import photo4 from '../../public/images/photo4.jpg';
-import photo5 from '../../public/images/photo5.jpg';
-import photo6 from '../../public/images/photo6.jpg';
-import photo7 from '../../public/images/photo7.jpg';
-import photo8 from '../../public/images/photo8.jpg';
-import styles from './PhotoCollage.module.css';
+import photo1 from "../../public/images/photo1.jpg";
+import photo2 from "../../public/images/photo2.jpg";
+import photo3 from "../../public/images/photo3.jpg";
+import photo4 from "../../public/images/photo4.jpg";
+import photo5 from "../../public/images/photo5.jpg";
+import photo6 from "../../public/images/photo6.jpg";
+import photo7 from "../../public/images/photo7.jpg";
+import photo8 from "../../public/images/photo8.jpg";
+import styles from "./PhotoCollage.module.css";
 
 const photos = [
   { id: 1, src: photo1, className: styles.photo1 },
@@ -26,8 +26,8 @@ const photos = [
 export const PhotoCollage = () => (
   <div
     className={cn(
-      "relative size-80",
-      "md:float-left md:mr-6 md:mb-2",
+      "relative size-80 max-w-full",
+      "md:float-left md:mr-6 md:mb-2 xl:mr-12",
       "md:rounded-br-[20%] md:rounded-tr-[25%]",
       "md:[shape-outside:margin-box]"
     )}
