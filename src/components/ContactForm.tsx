@@ -4,10 +4,7 @@ import * as React from "react";
 
 import { Form } from "radix-ui";
 
-import { FieldError } from "./Form/FieldError";
-import { FormField } from "./Form/FormField";
-import { FormStatus } from "./Form/FormStatus";
-import { SubmitButton } from "./Form/SubmitButton";
+import { FieldError, FormField, FormStatus, SubmitButton } from "./Form";
 
 type TStatus = PropsOf<typeof FormStatus>["status"];
 type TProps = NoChildren;
