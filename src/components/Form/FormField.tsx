@@ -4,21 +4,25 @@ import { Form } from "radix-ui";
 
 type TFieldProps = PropsOf<typeof Form.Field>;
 
-type TProps = NoChildren & {
+type TProps = Children & {
   fieldName: TFieldProps["name"];
   type?: React.HTMLInputTypeAttribute | "textarea";
   label?: string;
   isRequired?: boolean;
+  minLength?: number;
 };
 
 export const FormField: React.FC<TProps> = ({
+  children,
   fieldName,
   label,
   type = "text",
   isRequired = false,
+  minLength,
 }) => {
   const inputProps = {
     type,
+    minLength,
     name: fieldName,
     required: isRequired,
     className: "mt-1 w-full border border-gray-300 rounded-md p-2",
@@ -36,6 +40,7 @@ export const FormField: React.FC<TProps> = ({
         {label} {isRequired && <span className="text-red-600">*</span>}
       </Form.Label>
       <Form.Control asChild>{renderInput()}</Form.Control>
+      {children}
     </Form.Field>
   );
 };
