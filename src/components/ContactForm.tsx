@@ -10,19 +10,15 @@ import { SubmitButton } from "./Form/SubmitButton";
 type TProps = NoChildren;
 
 export const ContactForm: React.FC<TProps> = () => {
-  // const handleSubmit = async (formData: FormData) => {
-  //   const response = await fetch("/api/contact", {
-  //     method: "POST",
-  //     body: formData,
-  //   });
-  //   const result = await response.json();
-  // };
+  const handleSubmit = async (formData: FormData) => {
+    await fetch("/api/contact", {
+      method: "POST",
+      body: formData,
+    });
+  };
 
   return (
-    <Form.Root
-      // action={handleSubmit}
-      className="flex flex-col gap-y-4"
-    >
+    <Form.Root action={handleSubmit} className="flex flex-col gap-y-4">
       <div className="flex flex-wrap gap-4 [&>*]:flex-1">
         <FormField fieldName="firstName" label="Jméno" />
         <FormField fieldName="lastName" label="Příjmení" />
