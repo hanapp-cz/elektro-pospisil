@@ -3,10 +3,12 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   const formData = await req.formData();
-  const email = formData.get("email")?.toString() || "";
-  const message = formData.get("message")?.toString() || "";
-  const firstName = formData.get("firstName")?.toString() || "";
-  const lastName = formData.get("lastName")?.toString() || "";
+  const getFieldValue = parseValue(formData);
+
+  const email = getFieldValue("email");
+  const message = getFieldValue("message");
+  const firstName = getFieldValue("firstName");
+  const lastName = getFieldValue("lastName");
 
   // const recaptcha = formData.get("g-recaptcha-response")?.toString();
 
@@ -56,7 +58,7 @@ export async function POST(req: Request) {
       text: `
     Dobrý den,
     děkujeme za Vaši zprávu. Ozveme se co nejdříve.
-    
+
     S pozdravem,
     Jiří Pospíšil
     `,
@@ -69,3 +71,9 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ success: true });
 }
+
+// * HELPERS
+
+const parseValue = (formData: FormData) => (key: string) => {
+  return formData.get(key)?.toString().trim() ?? "";
+};
