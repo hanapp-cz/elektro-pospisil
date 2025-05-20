@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import { SECTIONS } from '@/config/config';
-import { cn } from '@/utils/cn';
+import { SECTIONS } from "@/config/config";
+import { cn } from "@/utils/cn";
 
-import electrician from '../../public/images/electrician.png';
-import { ButtonLink } from './ButtonLink';
-import styles from './Hero.module.css';
+import electrician from "../../public/images/electrician.png";
+import { ButtonLink } from "./ButtonLink";
+import styles from "./Hero.module.css";
 
 type TProps = NoChildren;
 
@@ -55,6 +55,7 @@ export const Hero: React.FC<TProps> = () => {
           <Image
             src={electrician}
             alt="" // decorative
+            priority
             className="w-full h-auto max-w-[200px] md:max-w-[300px] lg:max-w-[400px]"
           />
         </div>
