@@ -17,3 +17,5 @@ export const SECTIONS = {
   },
   contact: { name: "Kontakt", id: "contact", subtitle: "Ozvěte se nám" },
 } as const;
+
+export const RECAPTCHA_SITE_KEY = "6LeklVgrAAAAAGyUB8PgqnrK0uB1y4uxVQivm-yT";

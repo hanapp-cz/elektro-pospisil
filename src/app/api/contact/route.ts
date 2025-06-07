@@ -10,22 +10,22 @@ export async function POST(req: Request) {
   const firstName = getFieldValue("firstName");
   const lastName = getFieldValue("lastName");
 
-  // const recaptcha = formData.get("g-recaptcha-response")?.toString();
-
   // Verify reCAPTCHA
-  //   const captchaRes = await fetch(
-  //     `https://www.google.com/recaptcha/api/siteverify`,
-  //     {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //       body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptcha}`,
-  //     }
-  //   );
+  const recaptcha = formData.get("g-recaptcha-response")?.toString();
+  const captchaRes = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptcha}`,
+    }
+  );
 
-  //   const captchaData = await captchaRes.json();
-  //   if (!captchaData.success) {
-  //     return NextResponse.json({ error: "reCAPTCHA failed" }, { status: 400 });
-  //   }
+  const captchaData = await captchaRes.json();
+
+  if (!captchaData.success) {
+    return NextResponse.json({ error: "reCAPTCHA failed" }, { status: 400 });
+  }
 
   // Configure nodemailer
   const transporter = nodemailer.createTransport({

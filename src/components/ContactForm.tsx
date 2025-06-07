@@ -3,6 +3,9 @@
 import * as React from "react";
 
 import { Form } from "radix-ui";
+import ReCAPTCHA from "react-google-recaptcha";
+
+import { RECAPTCHA_SITE_KEY } from "@/config/config";
 
 import { FieldError, FormField, FormStatus, SubmitButton } from "./Form";
 
@@ -78,6 +81,7 @@ export const ContactForm: React.FC<TProps> = () => {
         </FieldError>
       </FormField>
 
+      <ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} />
       <div className="ml-1 sm:ml-0 flex flex-col sm:flex-row gap-4 sm:items-center">
         <SubmitButton />
         <FormStatus status={status} />
